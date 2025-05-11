@@ -14,14 +14,14 @@ type ProductCardProps = {
 };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const { addToCart } = useCartContext();
+  const { increaseItemQuantity } = useCartContext();
   return (
     <div className="product-card">
       <h2>{product.name}</h2>
       <p>
         Price: {product.price.main}.{product.price.fractional}
       </p>
-      <button onClick={() => addToCart(product.id) }>Add to Cart</button>
+      <button onClick={() => increaseItemQuantity(product.id) }>Add to Cart</button>
     </div> 
   );
 };
