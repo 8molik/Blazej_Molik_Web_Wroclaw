@@ -19,7 +19,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     <div className="product-card">
       <h2>{product.name}</h2>
       <p>
-        Cena: {product.price.main}.{product.price.fractional}
+        Cena: {product.price.main}.{product.price.fractional} zł
       </p>
       <button onClick={() => increaseItemQuantity(product.id)}>
         Dodaj do koszyka
