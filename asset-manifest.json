@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "./static/css/main.2449abef.css",
-    "main.js": "./static/js/main.7fdc3c14.js",
-    "index.html": "./index.html",
-    "main.2449abef.css.map": "./static/css/main.2449abef.css.map",
-    "main.7fdc3c14.js.map": "./static/js/main.7fdc3c14.js.map"
+    "main.css": "/ocado-project/static/css/main.2449abef.css",
+    "main.js": "/ocado-project/static/js/main.9b832c90.js",
+    "index.html": "/ocado-project/index.html",
+    "main.2449abef.css.map": "/ocado-project/static/css/main.2449abef.css.map",
+    "main.9b832c90.js.map": "/ocado-project/static/js/main.9b832c90.js.map"
   },
   "entrypoints": [
     "static/css/main.2449abef.css",
-    "static/js/main.7fdc3c14.js"
+    "static/js/main.9b832c90.js"
   ]
 }
