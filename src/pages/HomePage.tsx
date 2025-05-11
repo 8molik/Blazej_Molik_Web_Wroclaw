@@ -1,6 +1,5 @@
 import products from '../assets/products.json';
-import { Product } from '../types/Product';
-import ProductCard from '../components/ProductCard';
+import { ProductCard, Product } from '../components/ProductCard';
 import { Link } from 'react-router-dom';
 
 
@@ -20,9 +19,6 @@ const HomePage = () => {
           <ProductCard
             key={product.id}
             product={product}
-            onAddToCart={() => {
-              console.log(`Added to cart`);
-            }}
           />
         ))}
       </div>

@@ -1,23 +1,28 @@
-import React from "react";
-import { Product } from "../types/Product";
+import { useCartContext } from "../context/CartContext";
 
-interface ProductCardProps {
-    product: Product;
-    onAddToCart: (product: Product) => void;
+export type Product = {
+    id: number;
+    name: string;
+    price: {
+        main: number;
+        fractional: number;
+    };
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
-    const handleAddToCart = () => {
-        onAddToCart(product);
-    };
-
-    return (
-        <div className="product-card">
-            <h2>{product.name}</h2>
-            <p>Price: {product.price.main}.{product.price.fractional}</p>
-            <button onClick={handleAddToCart}>Add to Cart</button>
-        </div>
-    );
+type ProductCardProps = {
+  product: Product;
 };
 
-export default ProductCard;
+export const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useCartContext();
+  return (
+    <div className="product-card">
+      <h2>{product.name}</h2>
+      <p>
+        Price: {product.price.main}.{product.price.fractional}
+      </p>
+      <button onClick={() => addToCart(product.id) }>Add to Cart</button>
+    </div> 
+  );
+};
+
