@@ -1,30 +1,51 @@
 import { useCartContext } from "../context/CartContext";
-import { Product } from "../components/ProductCard";
-import products from "../assets/products.json";
+import { Link, useNavigate } from "react-router-dom";
+import CartItem from "../components/CartItem";
 
 const CartPage = () => {
-  const { cartItems, increaseItemQuantity, decreaseItemQuantity, removeFromCart } = useCartContext();
+  const {
+    cartItems,
+    increaseItemQuantity,
+    decreaseItemQuantity,
+    removeFromCart,
+    cartTotal,
+  } = useCartContext();
 
-  const getProductNameById = (id: number) => {
-    const product = products.find((product: Product) => product.id === id);
-    return product ? product.name : "Unknown Product";
+  const navigate = useNavigate();
+
+  const handlePlaceOrder = () => {
+    navigate('/order-confirmation', {
+      state: {
+        items: cartItems,
+      },
+    });
   };
 
   return (
     <div className="cart">
       <h1>Cart</h1>
+      <Link to="/">
+        <button className="back-button">Powrót do listy</button>
+      </Link>
       <ul>
         {cartItems.map((item) => (
-            <>
-          <li key={item.id}>{getProductNameById(item.id)} - {item.quantity}</li>
-          <div>
-            <button onClick={() => increaseItemQuantity(item.id)}>+</button>
-            <button onClick={() => decreaseItemQuantity(item.id)}>-</button>
-            <button onClick={() => removeFromCart(item.id)}>Remove</button>
-            </div>
-            </>
+          <CartItem
+            key={item.product.id}
+            item={item}
+            increaseItemQuantity={increaseItemQuantity}
+            decreaseItemQuantity={decreaseItemQuantity}
+            removeFromCart={removeFromCart}
+          />
         ))}
       </ul>
+      <div className="cart-summary">
+        {cartTotal > 0 ? <p>Całkowita cena: {cartTotal}</p> : <p>Your cart is empty</p>}
+      </div>
+      <Link to="/checkout">
+        <button className="checkout-button" disabled={cartTotal === 0} onClick={handlePlaceOrder}>
+          Złóż Zamówienie
+        </button>
+      </Link>
     </div>
   );
 };

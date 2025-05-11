@@ -1,28 +1,22 @@
-import products from '../assets/products.json';
-import { ProductCard, Product } from '../components/ProductCard';
-import { Link } from 'react-router-dom';
-
+import products from "../assets/products.json";
+import { ProductCard, Product } from "../components/ProductCard";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
-    return (
+  return (
     <div className="home-page">
-    <h1>Web Shop</h1>
+      <h1>Sklep Internetowy</h1>
       <div className="cart-icon">
         <Link to="/cart">
-          <button className="cart-button">
-            Koszyk 
-          </button>
+          <button className="cart-button">Koszyk</button>
         </Link>
       </div>
       <div className="products">
         {products.map((product: Product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      </div>
-    );
+    </div>
+  );
 };
 export default HomePage;
