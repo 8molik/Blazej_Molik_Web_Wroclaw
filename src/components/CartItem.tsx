@@ -20,7 +20,7 @@ const CartItem: React.FC<CartItemProps> = ({
   return (
     <>
       <li>
-        Liczba sztuk: {item.product.name} - {item.quantity}, cena:{" "}
+        {item.product.name} - Liczba sztuk: {item.quantity}, cena:{" "}
         {item.product.price.main}.{item.product.price.fractional} zł Suma:{" "}
         {item.product.price.main * item.quantity +
           (item.product.price.fractional * item.quantity) / 100}{" "}
