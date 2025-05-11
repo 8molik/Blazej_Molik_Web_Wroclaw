@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ocado-project/static/css/main.2449abef.css",
+    "main.js": "/ocado-project/static/js/main.c173ffa5.js",
+    "index.html": "/ocado-project/index.html",
+    "main.2449abef.css.map": "/ocado-project/static/css/main.2449abef.css.map",
+    "main.c173ffa5.js.map": "/ocado-project/static/js/main.c173ffa5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2449abef.css",
+    "static/js/main.c173ffa5.js"
+  ]
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potwierdzenie Zamówienia</title>
+  <link rel="stylesheet" href="/styles/index.css">
+</head>
+<body>
+  <div id="order-confirmation">
+    <h1>Zamówienie złożone pomyślnie!</h1>
+    <p>Dziękujemy za zakupy w naszym sklepie.</p>
+    <a href="/">Wróć do sklepu</a>
+  </div>
+
+  <div id="order-summary"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderSummary = JSON.parse(localStorage.getItem('orderSummary')) || [];
+      const summaryContainer = document.getElementById('order-summary');
+
+      if (orderSummary.length === 0) {
+        summaryContainer.innerHTML = '<p>Brak danych zamówienia.</p>';
+        return;
+      }
+
+      let totalPrice = 0;
+      const summaryList = orderSummary.map(item => {
+        const itemTotal = item.quantity * (item.price.main + item.price.fractional / 100);
+        totalPrice += itemTotal;
+        return `
+          <li>
+            <p>Nazwa: ${item.name}</p>
+            <p>Ilość: ${item.quantity}</p>
+            <p>Cena jednostkowa: ${(item.price.main + item.price.fractional / 100).toFixed(2)} zł</p>
+            <p>Łączna cena: ${itemTotal.toFixed(2)} zł</p>
+          </li>
+        `;
+      }).join('');
+
+      summaryContainer.innerHTML = `
+        <ul>${summaryList}</ul>
+        <h3>Suma całkowita: ${totalPrice.toFixed(2)} zł</h3>
+      `;
+    });
+  </script>
+</body>
+</html>
