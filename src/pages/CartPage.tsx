@@ -23,7 +23,7 @@ const CartPage = () => {
 
   return (
     <div className="cart">
-      <h1>Cart</h1>
+      <h1>Koszyk</h1>
       <Link to="/">
         <button className="back-button">Powrót do listy</button>
       </Link>
@@ -39,11 +39,11 @@ const CartPage = () => {
         ))}
       </ul>
       <div className="cart-summary">
-        {cartTotal > 0 ? <p>Całkowita cena: {cartTotal}</p> : <p>Your cart is empty</p>}
+        {cartTotal > 0 ? <p>Całkowita cena: {cartTotal}</p> : <p>Twój koszyk jest pusty</p>}
       </div>
       <Link to="/checkout">
         <button className="checkout-button" disabled={cartTotal === 0} onClick={handlePlaceOrder}>
-          Złóż Zamówienie
+          Przejdź do podsumowania
         </button>
       </Link>
     </div>

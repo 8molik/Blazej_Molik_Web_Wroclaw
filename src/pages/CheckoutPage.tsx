@@ -17,7 +17,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="cart">
-      <h1>Checkout</h1>
+      <h1>Podsumowanie</h1>
       <Link to="/cart">
         <button className="back-button">Powrót do koszyka</button>
       </Link>
