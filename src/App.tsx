@@ -1,25 +1,23 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
+import products from './assets/products.json';
+import { Product } from './types/Product';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Web Shop</h1>
+      <div className="products">
+        {products.map((product: Product) => (
+          <div key={product.id} className="product">
+            <h2>{product.name}</h2>
+            <p>Price: {product.price.main}.{product.price.fractional}</p>
+          </div>
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
