@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Blazej_Molik_Web_Wroclaw/static/css/main.2449abef.css",
-    "main.js": "/Blazej_Molik_Web_Wroclaw/static/js/main.a8a02aa2.js",
+    "main.js": "/Blazej_Molik_Web_Wroclaw/static/js/main.99a391ce.js",
     "index.html": "/Blazej_Molik_Web_Wroclaw/index.html",
     "main.2449abef.css.map": "/Blazej_Molik_Web_Wroclaw/static/css/main.2449abef.css.map",
-    "main.a8a02aa2.js.map": "/Blazej_Molik_Web_Wroclaw/static/js/main.a8a02aa2.js.map"
+    "main.99a391ce.js.map": "/Blazej_Molik_Web_Wroclaw/static/js/main.99a391ce.js.map"
   },
   "entrypoints": [
     "static/css/main.2449abef.css",
-    "static/js/main.a8a02aa2.js"
+    "static/js/main.99a391ce.js"
   ]
 }
